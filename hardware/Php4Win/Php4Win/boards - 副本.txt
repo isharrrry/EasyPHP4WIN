@@ -1,0 +1,33 @@
+
+easyc.name=EasyC (MinGW-x86) 
+easyc.vid.0=0x2341
+easyc.pid.0=0x003d
+
+easyc.upload.tool=bossac
+easyc.upload.protocol=arduino
+easyc.upload.maximum_size=2000000
+easyc.upload.native_usb=true
+
+easyc.build.mcu=x86
+easyc.build.f_cpu=1L
+easyc.build.usb_product="x86"
+easyc.build.core=arduino
+easyc.build.variant=easyc
+
+
+
+easyc_cl.name=EasyC (VC6.0-x86) 
+easyc_cl.vid.0=0x2341
+easyc_cl.pid.0=0x003d
+
+easyc_cl.upload.tool=bossac
+easyc_cl.upload.protocol=arduino
+easyc_cl.upload.maximum_size=2000000
+easyc_cl.upload.native_usb=true
+
+easyc_cl.build.mcu=x86
+easyc_cl.build.f_cpu=1L
+easyc_cl.build.usb_product="x86"
+easyc_cl.build.core=arduino
+easyc_cl.build.variant=easyc
+

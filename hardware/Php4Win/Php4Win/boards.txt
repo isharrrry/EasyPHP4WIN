@@ -1,0 +1,16 @@
+
+Php4Win.name=Php4Win Base1 
+Php4Win.vid.0=0x2341
+Php4Win.pid.0=0x003d
+
+Php4Win.upload.tool=bossac
+Php4Win.upload.protocol=arduino
+Php4Win.upload.maximum_size=2000000
+Php4Win.upload.native_usb=true
+
+Php4Win.build.mcu=x86
+Php4Win.build.f_cpu=1L
+Php4Win.build.usb_product="x86"
+Php4Win.build.core=arduino
+Php4Win.build.variant=Php4Win
+Php4Win.build.board=b1

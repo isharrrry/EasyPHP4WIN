@@ -1,0 +1,87 @@
+
+# Arduino SAM Core and platform.
+#
+# For more info:
+# https://github.com/arduino/Arduino/wiki/Arduino-IDE-1.5---3rd-party-Hardware-specification
+
+name=Php4Win
+version=1.5.5
+
+# SAM3 compile variables
+# ----------------------
+compiler.path=D:/Arduino/hardware/tools/Php4Win
+compiler.php={compiler.path}/php.exe
+compiler.startobj={compiler.path}/start.bat {compiler.php}
+compiler.pause={compiler.path}/pause.bat
+
+compiler.outname={compiler.path}/index.php
+compiler.afterrun={compiler.path}/php.exe
+
+compiler.c.cmd=
+compiler.c.flags=
+
+compiler.cpp.cmd=
+compiler.cpp.flags=
+
+compiler.S.flags=
+compiler.c.elf.cmd=
+compiler.c.elf.flags=
+
+compiler.ar.cmd=
+compiler.ar.flags=
+
+compiler.objcopy.cmd=
+compiler.objcopy.eep.flags=
+
+compiler.elf2hex.flags=
+compiler.elf2hex.cmd=
+
+compiler.ldflags=
+compiler.size.cmd=size
+compiler.define=-DARDUINO=
+# this can be overriden in boards.txt
+build.extra_flags=
+
+
+# SAM3 compile patterns
+# ---------------------
+
+## Compile c files
+recipe.c.o.pattern=
+
+## Compile c++ files
+recipe.cpp.o.pattern={compiler.startobj} {compiler.path}/sketch.php "{source_file}"
+
+## Create archives
+recipe.ar.pattern=
+
+## Combine gc-sections, archives, and objects
+recipe.c.combine.pattern={compiler.pause}
+
+## Create eeprom
+recipe.objcopy.eep.pattern={compiler.startobj} {compiler.path}/clear.php "{build.path}/sketch/{build.project_name}.php"
+
+## Create hex
+recipe.objcopy.hex.pattern={compiler.startobj} {compiler.path}/cmd.php {compiler.php} "{build.path}/sketch/{build.project_name}.php"
+
+## Compute size
+recipe.size.pattern={compiler.startobj} {compiler.path}/size.php "{build.path}/sketch/"
+recipe.size.regex=\.text\s+([0-9]+).*
+recipe.size.regex.data=\.data\s+([0-9]+).*
+
+## Preprocessor
+preproc.includes.flags=
+recipe.preproc.includes=
+
+preproc.macros.flags=
+recipe.preproc.macros={compiler.startobj} {compiler.path}/copy.php "{source_file}" "{preprocessed_file_path}"
+
+
+# SAM3 Uploader tools
+# -------------------
+
+tools.bossac.cmd=cmd
+tools.bossac.cmd.windows=cmd
+tools.bossac.path={build.path}
+
+
